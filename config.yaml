@@ -1,0 +1,8 @@
+
+version: 1.0.0
+
+# Modify these to reflect your own environment
+
+viceTools: /Applications/vice/tools/
+viceX64: /Applications/vice/x64.app/Contents/MacOS/x64/
+demoDevPath: /democode/src/main/java/oxidy/

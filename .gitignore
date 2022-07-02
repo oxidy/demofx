@@ -1,0 +1,8 @@
+.vscode
+.gradle
+.DS_Store
+output
+bin
+exclude
+*Examples*
+*example*

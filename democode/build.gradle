@@ -1,0 +1,43 @@
+plugins {
+    id 'application'
+}
+
+application {
+    mainClass = 'oxidy.DemoLauncher'
+}
+
+repositories { 
+    mavenCentral() 
+}
+
+configurations {
+    extraLibs
+}
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+dependencies {
+    implementation files('lib/DemoFX-1.0.0.jar')
+}
+
+jar {
+    archiveBaseName = 'DemoLauncher'
+    archiveVersion =  '1.0.0'
+    
+    manifest {
+        attributes (
+            'Main-Class': 'oxidy.DemoLauncher'
+        )
+    }
+
+    from {
+        configurations.extraLibs.collect { it.isDirectory() ? it : zipTree(it) }
+    }
+
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+
+    dependsOn ":demofx:build"
+
+}
+

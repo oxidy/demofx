@@ -1,0 +1,22 @@
+ByteBoozer
+
+Behövs ingen extension. Sätt execute med:
+chmod +x bb
+
+Sen ./bb i terminalen
+
+
+
+bb git:(master) ✗ ./bb
+Usage: bb [-[c|d|e|r] xxxx] <filename>
+   -c: Make executable with decruncher.
+   -d: Make executable with decruncher and d020-effect.
+   -e: Make executable with loader init and decruncher.
+   -r: Relocate file.
+   xxxx: 16 bit hex adress.
+
+
+
+
+Make Executable your jar and after that double click on it on Mac OS then it works successfully.
+sudo chmod +x filename.jar
