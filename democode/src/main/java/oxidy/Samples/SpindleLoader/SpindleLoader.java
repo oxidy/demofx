@@ -31,7 +31,9 @@ public class SpindleLoader {
     public static void A_SpindleLoader() throws Exception {
 		
 		// Create a demo object. 
-		// If the demo is directly below the demoDevPath set in config.yaml like this:
+		// Make sure you've set the demoDevPath set in config.yaml.
+		// 
+		// If the demo is directly below the demoDevPath like this:
 		// 		/democode/src/main/java/oxidy/SpindleLoader
 		// Then you can use the following to initiate the demo:
 		// 		Demo demo = new Demo("SpindleLoader");
@@ -39,6 +41,8 @@ public class SpindleLoader {
 		//		/democode/src/main/java/oxidy/Samples/SpindleLoader
 		// Then you will need to specify the project location like this:
 		Demo demo = new Demo("democode/src/main/java/oxidy/Samples", "SpindleLoader");
+		//
+		// TODO: Improve the subfolder logic.
 
 		// In this case we want the Spindle loader.
 		demo.loaderType = LoaderType.SPINDLE_BY_LFT;
@@ -61,7 +65,7 @@ public class SpindleLoader {
 		// AS you can see the bitmap in this example includes the 2 loading bytes. Therefor we must
 		// load the image to $57fe instead of $5800. In a near future it will be possible to load a
 		// spindle file without overwriting the 2 bytes before the bitmap in memory.
-
+		//
 		// TODO: Add possibility to remove loading bytes from prg
 
 		// Create a simple IRQ and add some code.
