@@ -4,7 +4,7 @@ This repository is a sample project to demonstrate how to use the DemoFX library
 
 DemoFX is a java framework used for building C64 demos.  
 All DemoFX development is done by Mikael Lilja, aka Oxidy/FairLight.  
-Current version of DemoFX is v1.0.0.  
+Current version of DemoFX is v1.0.1.  
 
 DemoFX development started in 2018, and has been ongoing since. To make sure it was actually  
 useful a two disk-side trackmo was developed in parallel. This demo was Skaaneland 2 by FairLight.  

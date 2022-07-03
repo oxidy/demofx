@@ -16,6 +16,7 @@ import demofx.*;
 import demofx.enums.Color;
 import demofx.enums.DirArtType;
 import demofx.enums.LoaderType;
+import demofx.enums.PrepareFileType;
 
 public class SpindleLoader {    
 
@@ -31,20 +32,16 @@ public class SpindleLoader {
     public static void A_SpindleLoader() throws Exception {
 		
 		// Create a demo object. 
-		// Make sure you've set the demoDevPath set in config.yaml.
-		// 
-		// If the demo is directly below the demoDevPath like this:
+		// If the demo is directly below the demoDevPath set in config.yaml like this:
 		// 		/democode/src/main/java/oxidy/SpindleLoader
 		// Then you can use the following to initiate the demo:
 		// 		Demo demo = new Demo("SpindleLoader");
 		// But, if you (like in this case) have a subfolder like this:
 		//		/democode/src/main/java/oxidy/Samples/SpindleLoader
 		// Then you will need to specify the project location like this:
-		Demo demo = new Demo("democode/src/main/java/oxidy/Samples", "SpindleLoader");
-		//
-		// TODO: Improve the subfolder logic.
+		Demo demo = new Demo("Samples", "SpindleLoader");
 
-		// In this case we want the Spindle loader.
+		// Select the Spindle loader.
 		demo.loaderType = LoaderType.SPINDLE_BY_LFT;
 		
 		// Spindle dirart settings
@@ -59,14 +56,13 @@ public class SpindleLoader {
 		// Load a SID. The path should be either SpindleLoader/includes/ or repository/sids/.
 		demo.setSID("flz-demosceniors.sid", "1000", "1003");
 		
-		// Save a bitmap as a loadable spindle file.
-		demo.addSpindleFile("57fe", "predator_cut_out_scenes.prg", false);
-
-		// AS you can see the bitmap in this example includes the 2 loading bytes. Therefor we must
-		// load the image to $57fe instead of $5800. In a near future it will be possible to load a
-		// spindle file without overwriting the 2 bytes before the bitmap in memory.
+		// Save a bitmap as a loadable spindle file. 
 		//
-		// TODO: Add possibility to remove loading bytes from prg
+		// In this case the bitmap has loading bytes. Let's remove them.
+		// The prepared file will end up in the temp folder with a .noload extension.
+		demo.prepareFile("predator_cut_out_scenes.prg", PrepareFileType.REMOVE_LOADING_BYTES);
+		// Now add the file to be loaded by Spindle. The keepLoading flag controls loading additional files.
+		demo.addSpindleFile("5800", "predator_cut_out_scenes.prg.noload", false);
 
 		// Create a simple IRQ and add some code.
 		// In this example we only make use of predefined functions. 
