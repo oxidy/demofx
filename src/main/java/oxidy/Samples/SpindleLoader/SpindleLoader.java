@@ -49,7 +49,7 @@ public class SpindleLoader {
 		demo.dirArt = "flt-gubbdata-dirart.json";
 
 		demo.d64Name = "spindle_disk_a";
-		demo.compressMainFile = true;
+		demo.setCompressMainFile(false);
 		demo.initialIRQD012 = "f8";
 	    demo.startAddress = "8000";
 

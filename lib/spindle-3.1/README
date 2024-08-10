@@ -1,0 +1,72 @@
+Spindle 3.1 by lft
+
+https://linusakesson.net/software/spindle/
+
+	The White Rabbit put on his spectacles. "Where shall
+	I begin, please your Majesty?" he asked.
+	"Begin at the beginning", the King said, very gravely,
+	"and go on till you come to the end: then stop."
+
+	-- Lewis Carroll, "Alice's Adventures in Wonderland"
+
+Spindle is an integrated linking, loading and decrunching solution for C64
+trackmos.
+
+The core of Spindle is a cutting-edge IRQ loader featuring extremely fast
+scattered loading and decrunching, minimal RAM footprint, and state of the art
+serial transfer routines.
+
+On top of this, Spindle provides a linking framework that automates much of the
+tedious work traditionally associated with trackmo development. By hiding the
+details of the storage model, Spindle allows the demo coder to focus on
+effects, transitions, and flow.
+
+======== Release notes =======================================================
+
+1.0	Initial release.
+2.0	Introducing Spin. Improved performance. Page $0f00 free for use.
+2.1	Performance upgrade; better and faster decruncher.
+2.2	Stability upgrade:
+	* Greater margins for serial transfer (optional, disable with -f).
+	* More robust checksum protection during motor spinup.
+	* Bus lock (write anything to all of dd02 in between loadercalls).
+	* Better ability to detect host reset (triggers a drive reset).
+2.3	New features:
+	* Optional error injection to simulate realistic delays.
+	* The X tag is more forcing, i.e. prevents all unnecessary loading.
+	* The $c10 utility routine leaves the CPU I flag alone.
+	* Disk ID can be specified.
+3.0	New features:
+	* The C64-resident code now occupies one page of RAM of the user's
+	  choice. Loader calls are made to the start of the page.
+	* Configurable buffer page and zero-page range.
+	* Manual in PDF format (Operator's Handbook).
+	* Seekable load scripts (both Spin and Pefchain).
+	* Support for streaming graphics and music.
+	* Silencing of other drives on the IEC bus, with adaptive serial
+	  transfer speed.
+	* Simulated playroutine timing.
+	* Generation of Vice script for memory boundary checks.
+	* Additional directory art file formats.
+	* 40-track mode.
+	Drivecode performance improvements: Headerless scanning, triple sector
+	buffers, IHS (Invented Here Stepping).
+	Improved compression algorithm.
+	Prebuilt binaries for Linux and Windows included.
+	Removed support for loading directly to I/O registers and colour RAM.
+	Serial transfers are no longer checksummed (to reduce resident size).
+3.1	Reintroduced NTSC compatibility.
+
+======== License =============================================================
+
+Go ahead and use this in your demos! You can include the spindle logo
+(example-pefchain/spindlelogo) if you like, but you don't have to. I would
+appreciate some credit, e.g. "Loader by lft".
+
+Please refer to the file COPYING for the formal stuff.
+
+======== Acknowledgements ====================================================
+
+I would like to thank the following individuals for inspiration, suggestions,
+bug reports, and testing: Bitbreaker, Krill, Ninja, Raistlin, Sparta, THCM, and
+Walt.

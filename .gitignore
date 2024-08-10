@@ -6,3 +6,4 @@ bin
 exclude
 *Examples*
 *example*
+target/
