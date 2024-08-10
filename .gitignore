@@ -4,6 +4,15 @@
 output
 bin
 exclude
+*.zip
 *Examples*
 *example*
+*reduced-pom*
+WorkInProgress
 target/
+tmp/
+repository/sids/*.sid
+repository/gfx*
+repository/fonts
+!repository/sids/flz-demosceniors.sid
+TODO.md
