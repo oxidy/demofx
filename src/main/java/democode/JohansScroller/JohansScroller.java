@@ -10,7 +10,7 @@ public class JohansScroller {
     public static void main( String[] args ) {
         try {
             A_BitmapAndScroller();
-                
+            
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -29,29 +29,30 @@ public class JohansScroller {
         demo.include("5800", "predator_cut_out_scenes.prg", "predator")
             .include("3800", "arena_b.font", "font");
 
-        demo.bg.code.d020_D021_SetColor(Color.BLACK_00);
-        demo.bg.code.d011_DEFAULT_1B();
-        demo.bg.add(CodeBase.moveFullscreenToD800("5800"));
-        demo.bg.memFill("d800+(40*22)", "01", 40);
-        demo.bg.memFill("3400+(40*22)", "20", 40);
-        
+        demo.bg.asm.d020_D021_SetColor(Color.BLACK_00);
+        demo.bg.asm.d011_DEFAULT_1B();
+        demo.bg.asm.moveFullscreenToD800("5800");
+        demo.bg.asm.memFill("d800+(40*22)", "01", 40);
+        demo.bg.asm.memFill("3400+(40*22)", "20", 40);        
+        demo.bg.asm.d011_BINARY_Set25Rows();
+
         // ---------------------------------------------------------------
         IRQ irq1 = new IRQ(1, 2, Timer.enabled, Stabilize.on, "df", "e8");
-        irq1.code.delayX("08")
-            .code.dd00_KRILLSAFE_Set_Bank0_0000_3fff()
-            .code.d018_SetCharmem("3800")
-            .code.d018_SetScreen("3400")
-            .code.d011_BitAction(D011BitAction.TEXT_MODE_DISABLE_BIT_5)
-            .code.stazp("d016", "10");
+        irq1.asm.delayX("08")
+            .asm.dd00_KRILLSAFE_Set_Bank0_0000_3fff()
+            .asm.d018_SetScreenAndCharmem("3400", "3800")
+            .asm.d011_BINARY_Set24Rows()
+            .asm.d011_BitAction(D011BitAction.TEXT_MODE_DISABLE_BIT_5)
+            .asm.d016_FromZP("10");
         demo.addIRQ(irq1);
         // ---------------------------------------------------------------
         IRQ irq2 = new IRQ(2, 1, Timer.disabled, Stabilize.on, "e8", "df");
-        irq2.code.delayX("08")
-            .code.d011_DisableScreen_7B()
-            .code.dd00_KRILLSAFE_Set_Bank1_4000_7fff()
-            .code.d018_SetScreenAndBitmap("5c00", "6000")
-            .code.d016_BINARY_SetMultiColorMode38Column()
-            .code.d011_EnabledScreen_BitmapMode_3B()
+        irq2.asm.delayX("08")
+            .asm.d011_DisableScreen_7B()
+            .asm.dd00_KRILLSAFE_Set_Bank1_4000_7fff()
+            .asm.d018_SetScreenAndBitmap("5c00", "6000")
+            .asm.d016_BINARY_SetMultiColorMode38Column()
+            .asm.d011_EnabledScreen_BitmapMode_3B()
             .callWithInterval("scroll1x1", "02");
         demo.addIRQ(irq2);
         // ---------------------------------------------------------------

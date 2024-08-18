@@ -70,12 +70,12 @@ public class SpindleLoader {
 		// ---------------------------------------------------------------
 		demo.addIRQ(new IRQ(1)
 			.label("colr:")
-			.code.d020_D021_SetColor(Color.BLUE_06)
+			.asm.d020_D021_SetColor(Color.BLUE_06)
 			.code.dd00_SPINDLESAFE_Set_Bank1_4000_7fff()
-			.code.d018_SetScreenAndBitmap("5c00", "6000")
-			.code.d016_BINARY_SetMultiColorModeWithNoScrolling()
-			.code.d011_EnabledScreen_BitmapMode_3B()
-			.code.d011_BINARY_Set25Rows()
+			.asm.d018_SetScreenAndBitmap("5c00", "6000")
+			.asm.d016_BINARY_SetMultiColorModeWithNoScrolling()
+			.asm.d011_EnabledScreen_BitmapMode_3B()
+			.asm.d011_BINARY_Set25Rows()
 			.playMusic(demo.musicPlayAddress));
         // ---------------------------------------------------------------
 		
@@ -85,20 +85,20 @@ public class SpindleLoader {
 		// First we use the timeline functionality to wait.
 		// No need to count frames. Note that the format is: HH:MM:FRAMES
 		// Possible values: HH = 00-99, MM = 00-59, FRAMES = 0-49
-		demo.bg.timelineWait("00:05.00");
+		demo.bg.time.timelineWait("00:05.00");
 
 		// Modify the background color to DARK GRAY (hex "0b") using the label in the IRQ. 
 		// staa is basically a LDA + STA macro.
-		demo.bg.staa("colr+1", "0b");
+		demo.bg.asm.staa("colr+1", "0b");
 		
 		// Load the bitmap
 		demo.bg.spindleLoad();
 
 		// Change the background color to black (00), this time using the Color enum.
-		demo.bg.staa("colr+1", Color.BLACK_00);
+		demo.bg.asm.staa("colr+1", Color.BLACK_00);
 
 		// Move color data from 5800 to $d800.
-		demo.bg.moveFullscreenToD800("5800");
+		demo.bg.asm.moveFullscreenToD800("5800");
 
 		// Compile, create d64, run in Vice.
         demo.compileAndRun();
