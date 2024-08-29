@@ -17,7 +17,7 @@ public class JohansScroller {
     }
     
 	public static void A_BitmapAndScroller() throws Exception {
-		
+        
 		Demo demo = new Demo("JohansScroller");
 
         demo.setStartAddressAndInitialIRQ("8000", "df")
@@ -29,12 +29,14 @@ public class JohansScroller {
         demo.include("5800", "predator_cut_out_scenes.prg", "predator")
             .include("3800", "arena_b.font", "font");
 
-        demo.bg.asm.d020_D021_SetColor(Color.BLACK_00);
-        demo.bg.asm.d011_DEFAULT_1B();
-        demo.bg.asm.moveFullscreenToD800("5800");
-        demo.bg.asm.memFill("d800+(40*22)", "01", 40);
-        demo.bg.asm.memFill("3400+(40*22)", "20", 40);        
-        demo.bg.asm.d011_BINARY_Set25Rows();
+        demo.initCode.asm.d020_D021_SetColor(Color.BLACK_00);
+
+        demo.bg
+            .asm.d011_DEFAULT_1B()
+            .asm.d011_BINARY_Set25Rows()
+            .asm.moveFullscreenToD800("5800")
+            .asm.memFill("d800+(40*22)", "01", 40)
+            .asm.memFill("3400+(40*22)", "20", 40);
 
         // ---------------------------------------------------------------
         IRQ irq1 = new IRQ(1, 2, Timer.enabled, Stabilize.on, "df", "e8");

@@ -6,7 +6,7 @@
 
   <groupId>se.oxidev</groupId>
   <artifactId>demofx</artifactId>
-  <version>1.4</version>
+  <version>1.5</version>
 
   <name>demofx</name>
 
@@ -48,7 +48,7 @@
       <artifactId>demofx</artifactId>
       <version>1.2</version>
       <scope>system</scope>
-      <systemPath>${project.basedir}/lib/demofx-1.4.jar</systemPath>
+      <systemPath>${project.basedir}/lib/demofx-1.5.jar</systemPath>
     </dependency>
   </dependencies>
 
