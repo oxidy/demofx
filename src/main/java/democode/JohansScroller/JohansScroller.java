@@ -32,8 +32,8 @@ public class JohansScroller {
         demo.initCode.asm.d020_D021_SetColor(Color.BLACK_00);
 
         demo.bg
-            .asm.d011_DEFAULT_1B()
-            .asm.d011_BINARY_Set25Rows()
+            .asm.d011_DEFAULT_1b()
+            .asm.d011_Set25Rows()
             .asm.moveFullscreenToD800("5800")
             .asm.memFill("d800+(40*22)", "01", 40)
             .asm.memFill("3400+(40*22)", "20", 40);
@@ -43,18 +43,18 @@ public class JohansScroller {
         irq1.asm.delayX("08")
             .asm.dd00_KRILLSAFE_Set_Bank0_0000_3fff()
             .asm.d018_SetScreenAndCharmem("3400", "3800")
-            .asm.d011_BINARY_Set24Rows()
+            .asm.d011_Set24Rows()
             .asm.d011_BitAction(D011BitAction.TEXT_MODE_DISABLE_BIT_5)
             .asm.d016_FromZP("10");
         demo.addIRQ(irq1);
         // ---------------------------------------------------------------
         IRQ irq2 = new IRQ(2, 1, Timer.disabled, Stabilize.on, "e8", "df");
         irq2.asm.delayX("08")
-            .asm.d011_DisableScreen_7B()
+            .asm.d011_DisableScreen__BYTE_7b()
             .asm.dd00_KRILLSAFE_Set_Bank1_4000_7fff()
             .asm.d018_SetScreenAndBitmap("5c00", "6000")
-            .asm.d016_BINARY_SetMultiColorMode38Column()
-            .asm.d011_EnabledScreen_BitmapMode_3B()
+            .asm.d016_SetMultiColorMode38Column()
+            .asm.d011_EnabledScreen_BitmapMode__BYTE_3b()
             .callWithInterval("scroll1x1", "02");
         demo.addIRQ(irq2);
         // ---------------------------------------------------------------

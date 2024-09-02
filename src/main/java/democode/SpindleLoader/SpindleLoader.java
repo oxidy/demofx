@@ -1,14 +1,14 @@
 /**
- *  -------------------------------------------------
+ *  -------------------------------------------------------------------------------
  * 	 DemoFX SpindleLoader example by Oxidy/FairLight
- *  -------------------------------------------------
+ *  -------------------------------------------------------------------------------
  * 	This code will load a bitmap image into memory using the Spindle loader by LFT.
  *  Nothing beautiful, but it will give you a minimal demo using an IRQ loader.
  * 	The background color will indicate the different steps during the process.
  * 	Blue:	Timeline waits 5 seconds
  * 	Gray:	Load bitmap image. You will see the bitmap appear as it loads.
- * 	Black:	File loaded and color data is moved to the color mem.
- * 
+ * 	Black:	File finished loading and the color data is moved to color memory.
+ *  -------------------------------------------------------------------------------
  */
 package SpindleLoader;
 
@@ -32,13 +32,6 @@ public class SpindleLoader {
     public static void A_SpindleLoader() throws Exception {
 		
 		// Create a demo object. 
-		// If the demo is directly below the demoDevPath set in config.yaml like this:
-		// 		/democode/src/main/java/oxidy/SpindleLoader
-		// Then you can use the following to initiate the demo:
-		// 		Demo demo = new Demo("SpindleLoader");
-		// But, if you (like in this case) have a subfolder like this:
-		//		/democode/src/main/java/oxidy/Samples/SpindleLoader
-		// Then you will need to specify the project location like this:
 		Demo demo = new Demo("SpindleLoader");
 
 		// Select the Spindle loader.
@@ -48,10 +41,10 @@ public class SpindleLoader {
 		demo.dirArtType = DirArtType.PETMATE_JSON_EXPORT;
 		demo.dirArt = "flt-gubbdata-dirart.json";
 
-		demo.d64Name = "spindle_disk_a";
-        demo.setCompressMainFile(true);
-		demo.initialIRQD012 = "f8";
-	    demo.startAddress = "8000";
+		demo.setD64Name("spindle_disk_a")
+			.setCompressMainFile(true)
+			.setInitialIRQD012("f8")
+			.setStartAddress("8000");
 
 		// Load a SID. The path should be either SpindleLoader/includes/ or repository/sids/.
 		demo.setSID("flz-demosceniors.sid", "1000", "1003");
@@ -61,21 +54,22 @@ public class SpindleLoader {
 		// In this case the bitmap has loading bytes. Let's remove them.
 		// The prepared file will end up in the temp folder with a .noload extension.
 		demo.prepareFile("predator_cut_out_scenes.prg", PrepareFileType.REMOVE_LOADING_BYTES);
+		
 		// Now add the file to be loaded by Spindle. The keepLoading flag controls loading additional files.
 		demo.addSpindleFile("5800", "predator_cut_out_scenes.prg.noload", false);
 
 		// Create a simple IRQ and add some code.
 		// In this example we only make use of predefined functions. 
-		// All predefined functions should be available in the irq or the irq.code object
+		// All predefined functions should be available in the irq or the irq.asm object
 		// ---------------------------------------------------------------
 		demo.addIRQ(new IRQ(1)
 			.label("colr:")
 			.asm.d020_D021_SetColor(Color.BLUE_06)
-			.code.dd00_SPINDLESAFE_Set_Bank1_4000_7fff()
+			.asm.dd02_SPINDLESAFE_Set_Bank1_4000_7fff()
 			.asm.d018_SetScreenAndBitmap("5c00", "6000")
-			.asm.d016_BINARY_SetMultiColorModeWithNoScrolling()
-			.asm.d011_EnabledScreen_BitmapMode_3B()
-			.asm.d011_BINARY_Set25Rows()
+			.asm.d016_SetMultiColorModeWithNoScrolling()
+			.asm.d011_EnabledScreen_BitmapMode__BYTE_3b()
+			.asm.d011_Set25Rows()
 			.playMusic(demo.musicPlayAddress));
         // ---------------------------------------------------------------
 		

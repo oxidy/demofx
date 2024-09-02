@@ -48,7 +48,7 @@
       <artifactId>demofx</artifactId>
       <version>1.2</version>
       <scope>system</scope>
-      <systemPath>${project.basedir}/lib/demofx-1.5.jar</systemPath>
+      <systemPath>${project.basedir}/lib/demofx-1.6.jar</systemPath>
     </dependency>
   </dependencies>
 
