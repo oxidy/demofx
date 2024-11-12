@@ -1,31 +1,26 @@
+# DemoFX - C64 Java Development Framework
 
-## VICE installation Ubuntu
+DemoFX is a java framework for developing C64 demos.  
+The complete demo Skaaneland 2 by FairLight was written using this framework. That was a few years ago, and the framework has evolved a lot since then. 
 
-sudo apt-get install vice
+There's also a tool called DemoFX Plus. A Beta version is included in the /lib-folder. Use this to draw bitmap images, create BitmapFragments or ColorCycle effects.
 
-# The Zimmer download
-#
-# The VICE version at Zimmers is constantly changing, so the URL below might not exist.
-# But, download the latest one.
-# The problem is that the files chargen,kernal,basic, etc are missingin the later version
-# being replaced with different .bin versions that can be renamed.
 
-wget http://www.zimmers.net/anonftp/pub/cbm/crossplatform/emulators/VICE/vice-3.7.tar.gz
-tar -zxvf vice-3.7.tar.gz 
+## Overview
 
-# The safe bet
-#
-# Guaranteed to work is to use vice-3.4. 
-# The tar file is included in the demofx-plus/lib folder.
+It's main purpose is not to create demo effects for you, but to provide a simplified way of managing IRQ's, timing, timelines, IRQ-loading. It also have plenty of convenient functions that help you generate standard code and move things around in memory.  
 
-cd vice-3.4/data/C64
-sudo cp chargen kernal basic /usr/share/vice/C64
-cd ../DRIVES/
-sudo cp d1541II d1571cr dos* /usr/share/vice/DRIVES/
+If set up correctly, your java project will generate a KickAsm-compatible source code file which will be automatically built, copied into a D64, and run in VICE.
 
-# Format D64, copy PRG to D64 and run D64.
 
-c1541 -format test,xx d64 ~/code/disk.d64 8
-c1541 ~/code/disk.d64 -write ~/code/demo.prg 
-x64sc ~/code/disk.d64
+## Table of Contents
+
+- [VICE Installation Ubuntu](docs/vice-ubuntu.md)
+- [Usage](docs/usage.md)
+
+
+## Quick Start
+
+For detailed documentation, see the links above.
+
 
