@@ -35,11 +35,11 @@ public class SpindleLoader {
 		Demo demo = new Demo("SpindleLoader");
 
 		// Select the Spindle loader.
-		demo.loaderType = LoaderType.SPINDLE_BY_LFT;
+		demo.setLoaderType(LoaderType.SPINDLE_BY_LFT);
 		
 		// Spindle dirart settings
-		demo.dirArtType = DirArtType.PETMATE_JSON_EXPORT;
-		demo.dirArt = "flt-gubbdata-dirart.json";
+		demo.setDirArtType(DirArtType.PETMATE_JSON_EXPORT);
+		demo.setDirArt("flt-gubbdata-dirart.json");
 
 		demo.setD64Name("spindle_disk_a")
 			.setCompressMainFile(true)

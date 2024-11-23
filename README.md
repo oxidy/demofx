@@ -18,10 +18,6 @@ If set up correctly, your java project will generate a KickAsm-compatible source
 - [VICE Installation Ubuntu](docs/vice-ubuntu.md)
 - [Getting started](docs/getting-started.md)
 - [Usage](docs/usage.md)
-
-
-## Quick Start
-
-For detailed documentation, see the links above.
+- [Troubleshooting](docs/troubleshooting.md)
 
 
