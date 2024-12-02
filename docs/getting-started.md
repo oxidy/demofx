@@ -3,21 +3,28 @@
 
 ## Getting started
 
-This git repo contains a few fully functional Java examples, meaning that you should be able to simply run/debug any of them and they should compile, build, generate a D64-image and finally run the C64 executable in VICE.
+This git repo contains a few fully functional Java examples, meaning that you should be able to simply run/debug any of them and they should compile, build, generate a D64-image and finally run the C64 executable in VICE or your Commodore 64/Ultimate 64. The examples should be well commented. These docs will also provide you with useful tips and tutorials.
 
 You should already be familiar with installing the JRE and how to do basic Java development. This won't be explained here.
 
-Less obvious is VICE - the Versatile Commodore Emulator.
-If you haven't already please visit https://vice-emu.sourceforge.io/ and install VICE.
+## Vice support
 
-In Linux, you should be able to start it by running `x64` in the terminal. If not you still have some configuring to do. Please read these [Ubuntu installation instructions](vice-ubuntu.md) 
+You can preview your code in VICE - the Versatile Commodore Emulator. To download and install visit: https://vice-emu.sourceforge.io/.  
 
+If you want to use VICE in Linux, you should be able to start it by running `x64` in the terminal. If not you still have some configuring to do.  
+For more information read the [Ubuntu installation instructions](vice-ubuntu.md).  
 For Windows and Mac you need to google if you have issues installing and running VICE, but you'll probably find useful clues by reading the previous link.
+
+## U64 support 
+
+You can also automatically preview your code directly on your Commodore 64 or Ultimate 64 by using [U64](u64.md). 
+This is built into DemoFX, and only needs two lines of configuration to enable. 
 
 ## The Java Examples
 
 Below src/main/java/democode you have a few demo examples.
 
+- BasicBitmapShower
 - FLDExample
 - JohansScroller
 - SpindleLoader

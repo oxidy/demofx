@@ -15,9 +15,11 @@ If set up correctly, your java project will generate a KickAsm-compatible source
 
 ## Table of Contents
 
-- [VICE Installation Ubuntu](docs/vice-ubuntu.md)
 - [Getting started](docs/getting-started.md)
 - [Usage](docs/usage.md)
 - [Troubleshooting](docs/troubleshooting.md)
 
+## Previewing 
 
+- [VICE Installation Ubuntu](docs/vice-ubuntu.md)
+- [U64-support](docs/u64.md)
