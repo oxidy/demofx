@@ -1,10 +1,9 @@
-
-version: 1.0.1
-
-#viceTools: /Applications/vice/tools/
-#viceX64: /Applications/vice/x64.app/Contents/MacOS/x64
-
-viceTools: 
-viceX64: x64sc
+verbose: 0
 
 demoDevPath: /src/main/java/democode/
+ 
+u64RunnerEnabled: 0
+u64RunnerIP: 192.168.1.141
+
+viceRunnerEnabled: 1
+viceRunner: x64
