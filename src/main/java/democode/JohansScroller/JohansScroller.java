@@ -18,12 +18,13 @@ public class JohansScroller {
     
 	public static void A_BitmapAndScroller() throws Exception {
         
-		Demo demo = new Demo("JohansScroller");
+        DiskSide diskSide = new DiskSide();
+        diskSide.setD64Name("johanscroller");
+        Demo demo = diskSide.addDemoPart("JohansScroller");
 
         demo.setStartAddressAndInitialIRQ("8000", "df")
             .setClearScreenAndColorRAM(true)
             .setCompressMainFile(true)
-            .setD64Name("johanscroller")
             .setFinalPRGName("scroll");
 	    
         demo.include("5800", "predator_cut_out_scenes.prg", "predator")

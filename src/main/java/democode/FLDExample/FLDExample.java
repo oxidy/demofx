@@ -18,11 +18,12 @@ public class FLDExample {
     
 	public static void DISK_A() throws Exception {
 		
-        Demo demo = new Demo("FLDExample");
+        DiskSide diskSide = new DiskSide();
+        diskSide.setD64Name("fld");
+        Demo demo = diskSide.addDemoPart("FLDExample");
 
         demo.setInitialIRQD012("02")
             .setStartAddress("8300")
-            .setD64Name("fld")
             .setFinalPRGName("fld")
             .setCompressMainFile(true);
         

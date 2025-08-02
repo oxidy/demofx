@@ -11,9 +11,11 @@ You should already be familiar with installing the JRE and how to do basic Java 
 
 You can preview your code in VICE - the Versatile Commodore Emulator. To download and install visit: https://vice-emu.sourceforge.io/.  
 
-If you want to use VICE in Linux, you should be able to start it by running `x64` in the terminal. If not you still have some configuring to do.  
+If you want to use VICE in Linux, you should be able to start it by running `x64` in the terminal. If this doesn't work you still have some configuring to do.  
 For more information read the [Ubuntu installation instructions](vice-ubuntu.md).  
-For Windows and Mac you need to google if you have issues installing and running VICE, but you'll probably find useful clues by reading the previous link.
+
+For Windows and Mac there are plenty of scenarios and I can't list all here. You could try to exchange the viceRunner with `x64sc` in config.yml, like this:
+viceRunner: x64sc
 
 ## U64 support 
 

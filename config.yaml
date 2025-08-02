@@ -2,10 +2,10 @@ verbose: 0
 
 demoDevPath: /src/main/java/democode/
  
-u64RunnerEnabled: 1
+u64RunnerEnabled: 0
 u64RunnerIP: 192.168.1.140
 
-u64Runner2Enabled: 1
+u64Runner2Enabled: 0
 u64Runner2IP: 192.168.1.26
 
 viceRunnerEnabled: 1
