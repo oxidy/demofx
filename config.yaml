@@ -9,4 +9,5 @@ u64Runner2Enabled: 0
 u64Runner2IP: 192.168.1.26
 
 viceRunnerEnabled: 1
-viceRunner: x64
+viceTools: /opt/homebrew/bin/
+viceRunner: /opt/homebrew/bin/x64

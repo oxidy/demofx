@@ -1,0 +1,26 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "java",
+      "name": "JohansScroller",
+      "request": "launch",
+      "mainClass": "JohansScroller.JohansScroller",
+      "projectName": "demofx"
+    },
+    {
+      "type": "java",
+      "name": "BasicBitmapShower",
+      "request": "launch",
+      "mainClass": "BasicBitmapShower.BasicBitmapShower",
+      "projectName": "demofx"
+    },
+    {
+      "type": "java",
+      "name": "SpindleLoader",
+      "request": "launch",
+      "mainClass": "SpindleLoader.SpindleLoader",
+      "projectName": "demofx"
+    }
+  ]
+}

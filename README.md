@@ -13,6 +13,16 @@ It's main purpose is not to create demo effects for you, but to provide a simpli
 If set up correctly, your java project will generate a KickAsm-compatible source code file which will be automatically built, copied into a D64, and run in VICE.
 
 
+## Framework dependency (Maven)
+
+This project pulls the DemoFX library (`com.oxidy:demofx`) from GitHub Packages. Auth is already included in the repo:
+
+- `.mvn/settings.xml` — GitHub username + read token  
+- `.mvn/maven.config` — tells Maven to use that settings file  
+
+You do **not** need to create your own `~/.m2/settings.xml`. Just open the project and run `mvn compile` (or Run in the IDE).
+
+
 ## Table of Contents
 
 - [Getting started](docs/getting-started.md)
