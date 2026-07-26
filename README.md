@@ -31,8 +31,11 @@ GitHub Packages always needs a token (even for public packages). VS Code’s Jav
 .\lib\scripts\install-maven-settings.ps1
 ```
 
-That copies `.mvn/settings.xml` (token included in this repo) to `~/.m2/settings.xml` (Windows: `%USERPROFILE%\.m2\settings.xml`).  
-Then reload VS Code or run **Java: Clean Java Language Server Workspace**.
+That copies `.mvn/settings.xml` to `~/.m2/settings.xml` (Windows: `%USERPROFILE%\.m2\settings.xml`).
+
+Then in VS Code: **Java: Clean Java Language Server Workspace** and reload.
+
+If VS Code still opens a GitHub **OAuth** window: cancel it. Confirm the install script wrote `%USERPROFILE%\.m2\settings.xml` / `~/.m2/settings.xml`, then **Java: Clean Java Language Server Workspace** and reload. (Do not commit personal `.vscode/settings.json` — JDK paths stay local.)
 
 
 ## Table of Contents

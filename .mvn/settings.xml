@@ -1,10 +1,11 @@
-<settings xmlns="http://maven.apache.org/SETTINGS/1.2.0"
+<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-          xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.2.0 https://maven.apache.org/xsd/settings-1.2.0.xsd">
+          xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 https://maven.apache.org/xsd/settings-1.0.0.xsd">
   <!--
-    Used by CLI (.mvn/maven.config) and Cursor/VS Code
-    (java.configuration.maven.userSettings + maven.settingsFile).
-    Server <id> must match pom.xml repository <id>.
+    Install once to ~/.m2/settings.xml via:
+      ./lib/scripts/install-maven-settings.sh
+      .\lib\scripts\install-maven-settings.ps1
+    Server <id> must match pom.xml repository <id> (github).
   -->
   <interactiveMode>false</interactiveMode>
 
@@ -18,8 +19,12 @@
 
   <profiles>
     <profile>
-      <id>github-packages</id>
+      <id>github</id>
       <repositories>
+        <repository>
+          <id>central</id>
+          <url>https://repo.maven.apache.org/maven2</url>
+        </repository>
         <repository>
           <id>github</id>
           <url>https://maven.pkg.github.com/oxidy/demofx-dev</url>
@@ -31,6 +36,6 @@
   </profiles>
 
   <activeProfiles>
-    <activeProfile>github-packages</activeProfile>
+    <activeProfile>github</activeProfile>
   </activeProfiles>
 </settings>
