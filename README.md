@@ -18,9 +18,12 @@ If set up correctly, your java project will generate a KickAsm-compatible source
 This project pulls the DemoFX library (`com.oxidy:demofx`) from GitHub Packages. Auth is already included in the repo:
 
 - `.mvn/settings.xml` — GitHub username + read token  
-- `.mvn/maven.config` — tells Maven to use that settings file  
+- `.mvn/maven.config` — tells Maven CLI to use that settings file  
+- `.vscode/settings.json` — points Cursor/VS Code Java + Maven at the same file  
 
-You do **not** need to create your own `~/.m2/settings.xml`. Just open the project and run `mvn compile` (or Run in the IDE).
+You do **not** need to create your own `~/.m2/settings.xml`.
+
+Without those settings, GitHub Packages returns **403** (not a normal login prompt), and the IDE may show a GitHub OAuth window. If that happens: **Java: Clean Java Language Server Workspace**, reload, and confirm Maven is using `.mvn/settings.xml`.
 
 
 ## Table of Contents

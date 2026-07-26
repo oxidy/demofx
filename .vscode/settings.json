@@ -2,6 +2,7 @@
   "java.configuration.updateBuildConfiguration": "automatic",
   "java.import.maven.enabled": true,
   "java.configuration.maven.userSettings": "${workspaceFolder}/.mvn/settings.xml",
+  "maven.settingsFile": "${workspaceFolder}/.mvn/settings.xml",
   "java.debug.settings.console": "integratedTerminal",
   "java.debug.settings.enableRunDebugCodeLens": true,
   "editor.codeLens": true,

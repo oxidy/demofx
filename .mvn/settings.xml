@@ -1,7 +1,13 @@
 <settings xmlns="http://maven.apache.org/SETTINGS/1.2.0"
           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
           xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.2.0 https://maven.apache.org/xsd/settings-1.2.0.xsd">
-  <!-- Read-only GitHub Packages token for com.oxidy:demofx (repo id must match pom <repository><id>). -->
+  <!--
+    Used by CLI (.mvn/maven.config) and Cursor/VS Code
+    (java.configuration.maven.userSettings + maven.settingsFile).
+    Server <id> must match pom.xml repository <id>.
+  -->
+  <interactiveMode>false</interactiveMode>
+
   <servers>
     <server>
       <id>github</id>
@@ -9,4 +15,22 @@
       <password>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</password>
     </server>
   </servers>
+
+  <profiles>
+    <profile>
+      <id>github-packages</id>
+      <repositories>
+        <repository>
+          <id>github</id>
+          <url>https://maven.pkg.github.com/oxidy/demofx-dev</url>
+          <releases><enabled>true</enabled></releases>
+          <snapshots><enabled>true</enabled></snapshots>
+        </repository>
+      </repositories>
+    </profile>
+  </profiles>
+
+  <activeProfiles>
+    <activeProfile>github-packages</activeProfile>
+  </activeProfiles>
 </settings>
