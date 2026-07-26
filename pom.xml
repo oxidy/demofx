@@ -14,6 +14,7 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.source>11</maven.compiler.source>
     <maven.compiler.target>11</maven.compiler.target>
+    <demofx.version>1.15</demofx.version>
   </properties>
 
   <repositories>
@@ -27,7 +28,7 @@
     <dependency>
       <groupId>com.oxidy</groupId>
       <artifactId>demofx</artifactId>
-      <version>1.15</version>
+      <version>${demofx.version}</version>
     </dependency>
   </dependencies>
 
