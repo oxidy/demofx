@@ -13,29 +13,16 @@ It's main purpose is not to create demo effects for you, but to provide a simpli
 If set up correctly, your java project will generate a KickAsm-compatible source code file which will be automatically built, copied into a D64, and run in VICE.
 
 
-## Framework dependency (Maven)
+## Framework dependency
 
-DemoFX (`com.oxidy:demofx`) comes from **GitHub Packages**. Change `<demofx.version>` in `pom.xml` to get a new jar — normal Maven.
+The DemoFX library jar lives in `lib/`:
 
-GitHub Packages always needs a token (even for public packages). VS Code’s Java support reads credentials from **`~/.m2/settings.xml`**.
-
-**One-time per machine:**
-
-```bash
-# macOS / Linux
-./lib/scripts/install-maven-settings.sh
+```text
+lib/demofx-1.15.jar
 ```
 
-```powershell
-# Windows (PowerShell)
-.\lib\scripts\install-maven-settings.ps1
-```
-
-That copies `.mvn/settings.xml` to `~/.m2/settings.xml` (Windows: `%USERPROFILE%\.m2\settings.xml`).
-
-Then in VS Code: **Java: Clean Java Language Server Workspace** and reload.
-
-If VS Code still opens a GitHub **OAuth** window: cancel it. Confirm the install script wrote `%USERPROFILE%\.m2\settings.xml` / `~/.m2/settings.xml`, then **Java: Clean Java Language Server Workspace** and reload. (Do not commit personal `.vscode/settings.json` — JDK paths stay local.)
+`pom.xml` references it as `lib/demofx-${demofx.version}.jar`.  
+To upgrade: drop the new jar in `lib/` and bump `<demofx.version>` to match.
 
 
 ## Table of Contents

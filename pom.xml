@@ -17,18 +17,35 @@
     <demofx.version>1.15</demofx.version>
   </properties>
 
-  <repositories>
-    <repository>
-      <id>github</id>
-      <url>https://maven.pkg.github.com/oxidy/demofx-dev</url>
-    </repository>
-  </repositories>
-
   <dependencies>
+    <!-- Framework jar lives in lib/ (no GitHub Packages / OAuth). -->
     <dependency>
       <groupId>com.oxidy</groupId>
       <artifactId>demofx</artifactId>
       <version>${demofx.version}</version>
+      <scope>system</scope>
+      <systemPath>${project.basedir}/lib/demofx-${demofx.version}.jar</systemPath>
+    </dependency>
+    <!-- Transitive deps of the thin demofx jar (from Maven Central). -->
+    <dependency>
+      <groupId>com.fasterxml.jackson.core</groupId>
+      <artifactId>jackson-databind</artifactId>
+      <version>2.13.3</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.commons</groupId>
+      <artifactId>commons-lang3</artifactId>
+      <version>3.12.0</version>
+    </dependency>
+    <dependency>
+      <groupId>org.xerial</groupId>
+      <artifactId>sqlite-jdbc</artifactId>
+      <version>3.39.4.1</version>
+    </dependency>
+    <dependency>
+      <groupId>org.yaml</groupId>
+      <artifactId>snakeyaml</artifactId>
+      <version>2.2</version>
     </dependency>
   </dependencies>
 
