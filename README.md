@@ -18,11 +18,11 @@ If set up correctly, your java project will generate a KickAsm-compatible source
 The DemoFX library jar lives in `lib/`:
 
 ```text
-lib/demofx-1.15.jar
+lib/demofx-n.nn.jar
 ```
 
 `pom.xml` references it as `lib/demofx-${demofx.version}.jar`.  
-To upgrade: drop the new jar in `lib/` and bump `<demofx.version>` to match.
+To upgrade: git pull, and bump `<demofx.version>` in pom.xml to match.
 
 
 ## Table of Contents
