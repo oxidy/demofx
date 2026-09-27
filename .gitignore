@@ -10,6 +10,7 @@ exclude
 WorkInProgress
 target/
 tmp/
+Vikings2/
 .vscode/settings.json
 repository/sids/*.sid
 repository/gfx*

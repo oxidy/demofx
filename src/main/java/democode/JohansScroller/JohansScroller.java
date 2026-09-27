@@ -60,7 +60,7 @@ public class JohansScroller {
         demo.addIRQ(irq2);
         // ---------------------------------------------------------------
 
-        demo.addJSR("*", "scroll1x1", 
+        demo.addCodeAsSubroutine("*", "scroll1x1",
             CodeBase.d016_Scroll_1X1("10", "3400+(40*22)", "scrolltext"));
     
         demo.injectFileInCode("additional.asm");

@@ -3,6 +3,20 @@
   "configurations": [
     {
       "type": "java",
+      "name": "Vikings2",
+      "request": "launch",
+      "mainClass": "Vikings2.Vikings2",
+      "projectName": "demofx"
+    },
+    {
+      "type": "java",
+      "name": "JohansScroller",
+      "request": "launch",
+      "mainClass": "JohansScroller.JohansScroller",
+      "projectName": "demofx"
+    },
+    {
+      "type": "java",
       "name": "Debug Current File",
       "request": "launch",
       "mainClass": "${file}",
