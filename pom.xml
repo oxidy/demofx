@@ -14,7 +14,7 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.source>11</maven.compiler.source>
     <maven.compiler.target>11</maven.compiler.target>
-    <demofx.version>1.17</demofx.version>
+    <demofx.version>1.19</demofx.version>
   </properties>
 
   <dependencies>
