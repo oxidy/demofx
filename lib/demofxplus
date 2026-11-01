@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# Launcher for DemoFX Plus 1.5 (fat jar).
+set -euo pipefail
+DIR="$(cd "$(dirname "$0")" && pwd)"
+exec java -jar "$DIR/demofxplus-1.5-all.jar" "$@"
