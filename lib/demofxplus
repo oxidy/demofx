@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
-# Launcher for DemoFX Plus 1.10 (fat jar).
+# Launcher for DemoFX Plus 1.11 (fat jar).
 # cd into lib/ so KickAss/b2 next to the jar are found even with older builds.
 set -euo pipefail
 DIR="$(cd "$(dirname "$0")" && pwd)"
 cd "$DIR"
-exec java -jar "$DIR/demofxplus-1.10-all.jar" "$@"
+exec java -jar "$DIR/demofxplus-1.11-all.jar" "$@"
